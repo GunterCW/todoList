@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styles from './app.module.scss';
 
-interface Todo{
+interface Todo {
   value: string;
   completed: boolean;
 }
+
 type TodoFilters = 'all' | 'active' | 'completed';
+
 export const App = () => {
   const [text, setText] = React.useState('');
   const [todoList, setTodoList] = React.useState<Todo[]>([]);
@@ -32,7 +34,7 @@ export const App = () => {
     setText('');
   };
   const deleteTodo = (i: number) => {
-    setTodoList(todoList.filter((value : Todo, index :number) => index !== i));
+    setTodoList(todoList.filter((value, index) => index !== i));
   };
 
   const checkboxCheck = (i: number) => {
@@ -45,15 +47,13 @@ export const App = () => {
       }
       return todo;
     });
+
     setTodoList(newTodo);
-    console.log(todoList[i]);
   };
+
   const deleteCompleted = () => {
     const filteredList = todoList.filter((todo) => {
-      if (todo.completed === true) {
-        return false;
-      }
-      return true;
+      return !todo.completed;
     });
     setTodoList(filteredList);
   };
@@ -69,35 +69,36 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
+      <h1 className={styles.title}>To Do</h1>
       <div className={styles.container}>
-        <span> To Do</span>
-        <form onSubmit={createTask}>
-          <input className="" type="text" placeholder="Write Task" value={text} onChange={addText} />
-          <button type="submit"> Add</button>
+        <form className={styles.form} onSubmit={createTask}>
+          <input className={styles.entryField} type="text" placeholder="Write Task" value={text} onChange={addText} />
+          <button type="submit">Add</button>
         </form>
-        <div>
+        <div className={styles.todoList}>
           {filteredTodos.map((item, i) => {
             return (
-            // eslint-disable-next-line react/no-array-index-key
-              <div key={i}>
+
+              // eslint-disable-next-line react/no-array-index-key
+              <div className={styles.todoTask} key={i}>
                 <input type="checkbox" name="" id="" checked={item.completed} onChange={() => checkboxCheck(i)} />
-                <span>{item.value}</span>
-                <button type="button" onClick={() => deleteTodo(i)}> delete</button>
+                <span className={item.completed ? styles.textLine : ''}>{item.value}</span>
+                <button type="button" onClick={() => deleteTodo(i)}>X</button>
               </div>
             );
           })}
-
-        </div>
-        <div>
-          <div>
-            <div>
+          <footer className={styles.botBar}>
+            <div className={styles.todosCounter}>
               {filteredTodos.length} items left
             </div>
-            <button type="button" onClick={() => setFilter('all')} disabled={filter === 'all'}> All</button>
-            <button type="button" onClick={() => setFilter('active')} disabled={filter === 'active'}> Active</button>
-            <button type="button" onClick={() => setFilter('completed')} disabled={filter === 'completed'}> Completed</button>
-            <button type="button" onClick={deleteCompleted}> Clear Completed</button>
-          </div>
+            <div className={styles.botButtonsSection}>
+              <button className={styles.botButtons} type="button" onClick={() => setFilter('all')} disabled={filter === 'all'}>All</button>
+              <button className={styles.botButtons} type="button" onClick={() => setFilter('active')} disabled={filter === 'active'}>Active</button>
+              <button className={styles.botButtons} type="button" onClick={() => setFilter('completed')} disabled={filter === 'completed'}>Completed</button>
+              <button className={styles.botButtons} type="button" onClick={deleteCompleted}>Clear Completed</button>
+            </div>
+          </footer>
+
         </div>
       </div>
     </div>

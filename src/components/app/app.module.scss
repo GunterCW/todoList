@@ -4,11 +4,101 @@
   padding: 0;
 }
 .app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
 }
 .container {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+.entryField {
+  width: 100%;
+  border: none;
+  padding: 4px 0px;
+
+  outline: none;
+}
+.form {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  box-shadow: 0px 0px 16px 3px rgba(34, 60, 80, 0.11);
+  margin-bottom: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  button {
+    padding: 0 10px;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    border-radius: 0px;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(192, 0, 255, 1) 0%, rgba(255, 201, 0, 1) 100%);
+
+  padding: 50px;
+}
+button {
+  padding: 6px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  color: black;
+
+  &:hover {
+    color: rgb(124, 124, 124);
+  }
+  &:active {
+    color: rgb(45, 44, 44);
+  }
+}
+
+.todoTask {
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  span {
+    padding: 4px;
+    word-break: break-all;
+  }
+  input {
+    margin: 0 10px;
+  }
+  button {
+    margin-left: auto;
+  }
+}
+.botBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 8px;
+}
+.botButtons {
+  margin: 0 0 0 8px;
+}
+
+.todoList {
+  width: 100%;
+  box-shadow: 0px 0px 16px 3px rgba(34, 60, 80, 0.11);
+}
+.todosCounter {
+}
+
+.textLine {
+  text-decoration: line-through;
+  color: rgb(6, 5, 5);
 }
