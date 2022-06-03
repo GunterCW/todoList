@@ -15,7 +15,7 @@ type TodoFilters = 'all' | 'active' | 'completed';
 const parsedList = () => {
   const savedList: string | null = window.localStorage.getItem('savedList');
   if (savedList === null) {
-    return undefined;
+    return [];
   }
   return JSON.parse(savedList);
 };
