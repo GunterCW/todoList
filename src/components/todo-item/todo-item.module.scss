@@ -1,0 +1,19 @@
+.todoTask {
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  border-top: 1px solid #ccc;
+
+  span {
+    padding: 4px;
+    word-break: break-all;
+  }
+  input {
+    margin: 0 10px;
+  }
+  button {
+    margin-left: auto;
+  }
+}
