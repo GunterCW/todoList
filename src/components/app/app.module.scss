@@ -3,8 +3,6 @@
   margin: 0;
   padding: 0;
 }
-.app {
-}
 .container {
   display: flex;
 
@@ -55,13 +53,19 @@ button {
   color: rgb(6, 5, 5);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 610px) {
   .container {
     padding: 10px;
   }
-  .botBar {
+}
+
+@media screen and (max-width: 425px) {
+  .buttonsBar {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 375px) {
+  button {
+    font-size: 12px;
+  }
 }
