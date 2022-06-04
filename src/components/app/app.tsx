@@ -5,6 +5,7 @@ import styles from './app.module.scss';
 import { TodoItem } from '../todo-item';
 import { Header } from '../header';
 import { Form } from '../form';
+import { Filters } from '../filters';
 
 interface Todo {
   value: string;
@@ -79,12 +80,7 @@ export const App = () => {
             <div className={styles.todosCounter}>
               {filteredTodos.length} items left
             </div>
-            <div className={styles.botButtonsSection}>
-              <button className={styles.botButtons} type="button" onClick={() => setFilter('all')} disabled={filter === 'all'}>All</button>
-              <button className={styles.botButtons} type="button" onClick={() => setFilter('active')} disabled={filter === 'active'}>Active</button>
-              <button className={styles.botButtons} type="button" onClick={() => setFilter('completed')} disabled={filter === 'completed'}>Completed</button>
-              <button className={styles.botButtons} type="button" onClick={deleteCompleted}>Clear Completed</button>
-            </div>
+            <Filters onDelete={deleteCompleted} state={filter} setState={setFilter} />
           </div>
           {filteredTodos.map((item, i) => {
             return (
