@@ -58,6 +58,9 @@ button {
   }
 }
 @media screen and (max-width: 375px) {
+  .buttonsBar {
+    padding-left: 8px;
+  }
   button {
     font-size: 12px;
   }

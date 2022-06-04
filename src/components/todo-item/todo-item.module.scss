@@ -28,7 +28,15 @@
 }
 .closeButton {
   transition: 0.3s;
+  color: black;
   &:hover {
     color: red;
+  }
+}
+@media screen and (max-width: 375px) {
+  .todoTask {
+    span {
+      font-size: 14px;
+    }
   }
 }
