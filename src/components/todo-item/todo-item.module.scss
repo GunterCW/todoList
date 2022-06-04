@@ -6,6 +6,10 @@
 
   border-top: 1px solid #ccc;
 
+  &:first-child {
+    border-top: none;
+  }
+
   span {
     padding: 4px;
     word-break: break-all;
@@ -15,5 +19,16 @@
   }
   button {
     margin-left: auto;
+  }
+}
+
+.textLine {
+  text-decoration: line-through;
+  color: rgb(6, 5, 5);
+}
+.closeButton {
+  transition: 0.3s;
+  &:hover {
+    color: red;
   }
 }

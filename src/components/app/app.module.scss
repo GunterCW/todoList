@@ -35,7 +35,8 @@ button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 8px;
+  padding: 10px 8px 10px 18px;
+  background-color: #fff;
 }
 
 .todoList {
@@ -43,11 +44,6 @@ button {
   box-shadow: 0px 0px 16px 3px rgba(34, 60, 80, 0.11);
 }
 .todosCounter {
-}
-
-.textLine {
-  text-decoration: line-through;
-  color: rgb(6, 5, 5);
 }
 
 @media screen and (max-width: 610px) {

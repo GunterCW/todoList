@@ -1,4 +1,5 @@
 import styles from './todo-item.module.scss';
+import CloseButton from '../image/closeButton';
 
 interface Todo {
   value: string;
@@ -18,7 +19,9 @@ export const TodoItem = (props: TodoItemProps) => {
     <div className={styles.todoTask}>
       <input type="checkbox" name="" id="" checked={item.completed} onChange={onToggle} />
       <span className={item.completed ? styles.textLine : ''}>{item.value}</span>
-      <button type="button" onClick={onDelete}>X</button>
+      <button type="button" onClick={onDelete}>
+        <CloseButton className={styles.closeButton} />
+      </button>
     </div>
   );
 };
