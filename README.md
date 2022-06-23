@@ -1,5 +1,3 @@
-Priority development: 
+its todolist was created with React+TS
 
-split on components (02.06 must be added)
-
-design(mobile versions) (02.06 must be added)
+Link on hosting: https://todo-list-guntercw.vercel.app/
